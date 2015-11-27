@@ -1,0 +1,17 @@
+<%= simple_form_for(@appoinment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+
+    <%= f.label "docters" %>
+    <%= f.collection_select :docter_id,Docter.all,:id,:name %>
+      <!-- <%= f.label "patients" %><%= f.collection_check_boxes :patient_id, Patient.all,:id,:name %> -->
+      <!-- <%= f.association :patient, :as => :check_boxes %> -->
+<%= f.collection_select :patient_id,Patient.all,:id,:name %>
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
