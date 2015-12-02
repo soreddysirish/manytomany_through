@@ -14,7 +14,7 @@
   <tbody>
     <% @docters.each do |docter| %>
       <tr>
-        <td><%= docter.name %></td>
+        <td><%= link_to docter.name,appoinments_docter_path(docter),method: :get %></td>
         <td><%= docter.address %></td>
         <td><%= link_to 'Show', docter %></td>
         <td><%= link_to 'Edit', edit_docter_path(docter) %></td>

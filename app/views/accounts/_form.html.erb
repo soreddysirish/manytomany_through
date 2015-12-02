@@ -1,0 +1,12 @@
+<%= simple_form_for(@account) validate: :account_validators do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.collection_select :supplier_id,Supplier.all,:id,:name%>
+    <%= f.input :account_number %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

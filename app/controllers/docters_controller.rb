@@ -61,6 +61,10 @@ class DoctersController < ApplicationController
     end
   end
 
+  def appoinments
+    @docter = Docter.find(params[:id])
+      @appointments = @docter.appoinments
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_docter
